@@ -63,14 +63,12 @@
             this.pbImg1 = new System.Windows.Forms.PictureBox();
             this.menuStrip1 = new System.Windows.Forms.MenuStrip();
             this.jeuToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
-            this.recommencerPartieToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.toolStripMenuItem1 = new System.Windows.Forms.ToolStripMenuItem();
             this.qIEnHautDe85ToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.qiEnBasDe85ToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.quitterLeJeuToolStripMenuItem = new System.Windows.Forms.ToolStripSeparator();
             this.quitterLeJeuToolStripMenuItem1 = new System.Windows.Forms.ToolStripMenuItem();
             this.optionToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
-            this.tempsDaffichageToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.musiqueDambiancenceToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.commencerToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.arrêterToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
@@ -82,6 +80,8 @@
             this.button2 = new System.Windows.Forms.Button();
             this.timerCacherImage = new System.Windows.Forms.Timer(this.components);
             this.lblTempsRestant = new System.Windows.Forms.Label();
+            this.label3 = new System.Windows.Forms.Label();
+            this.numericUpDownTimerModifierTemps = new System.Windows.Forms.NumericUpDown();
             ((System.ComponentModel.ISupportInitialize)(this.pbImg24)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.pbImg16)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.pbImg8)).BeginInit();
@@ -116,6 +116,7 @@
             ((System.ComponentModel.ISupportInitialize)(this.pbImg1)).BeginInit();
             this.menuStrip1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.numericUpDownChoisirNbDeMot)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.numericUpDownTimerModifierTemps)).BeginInit();
             this.SuspendLayout();
             // 
             // pbImg24
@@ -452,20 +453,12 @@
             // jeuToolStripMenuItem
             // 
             this.jeuToolStripMenuItem.DropDownItems.AddRange(new System.Windows.Forms.ToolStripItem[] {
-            this.recommencerPartieToolStripMenuItem,
             this.toolStripMenuItem1,
             this.quitterLeJeuToolStripMenuItem,
             this.quitterLeJeuToolStripMenuItem1});
             this.jeuToolStripMenuItem.Name = "jeuToolStripMenuItem";
             this.jeuToolStripMenuItem.Size = new System.Drawing.Size(36, 20);
             this.jeuToolStripMenuItem.Text = "Jeu";
-            // 
-            // recommencerPartieToolStripMenuItem
-            // 
-            this.recommencerPartieToolStripMenuItem.Name = "recommencerPartieToolStripMenuItem";
-            this.recommencerPartieToolStripMenuItem.Size = new System.Drawing.Size(184, 22);
-            this.recommencerPartieToolStripMenuItem.Text = "Recommencer Partie";
-            this.recommencerPartieToolStripMenuItem.Click += new System.EventHandler(this.recommencerPartieToolStripMenuItem_Click);
             // 
             // toolStripMenuItem1
             // 
@@ -505,17 +498,10 @@
             // optionToolStripMenuItem
             // 
             this.optionToolStripMenuItem.DropDownItems.AddRange(new System.Windows.Forms.ToolStripItem[] {
-            this.tempsDaffichageToolStripMenuItem,
             this.musiqueDambiancenceToolStripMenuItem});
             this.optionToolStripMenuItem.Name = "optionToolStripMenuItem";
             this.optionToolStripMenuItem.Size = new System.Drawing.Size(56, 20);
             this.optionToolStripMenuItem.Text = "Option";
-            // 
-            // tempsDaffichageToolStripMenuItem
-            // 
-            this.tempsDaffichageToolStripMenuItem.Name = "tempsDaffichageToolStripMenuItem";
-            this.tempsDaffichageToolStripMenuItem.Size = new System.Drawing.Size(204, 22);
-            this.tempsDaffichageToolStripMenuItem.Text = "Temps d\'affichage";
             // 
             // musiqueDambiancenceToolStripMenuItem
             // 
@@ -529,21 +515,21 @@
             // commencerToolStripMenuItem
             // 
             this.commencerToolStripMenuItem.Name = "commencerToolStripMenuItem";
-            this.commencerToolStripMenuItem.Size = new System.Drawing.Size(140, 22);
+            this.commencerToolStripMenuItem.Size = new System.Drawing.Size(152, 22);
             this.commencerToolStripMenuItem.Text = "Commencer";
             this.commencerToolStripMenuItem.Click += new System.EventHandler(this.commencerLaMusiqueToolStripMenuItem_Click);
             // 
             // arrêterToolStripMenuItem
             // 
             this.arrêterToolStripMenuItem.Name = "arrêterToolStripMenuItem";
-            this.arrêterToolStripMenuItem.Size = new System.Drawing.Size(140, 22);
+            this.arrêterToolStripMenuItem.Size = new System.Drawing.Size(152, 22);
             this.arrêterToolStripMenuItem.Text = "Arrêter";
             this.arrêterToolStripMenuItem.Click += new System.EventHandler(this.ArreterLaMusiqueStripMenuItem_Click);
             // 
             // label1
             // 
             this.label1.AutoSize = true;
-            this.label1.Location = new System.Drawing.Point(27, 357);
+            this.label1.Location = new System.Drawing.Point(23, 357);
             this.label1.Name = "label1";
             this.label1.Size = new System.Drawing.Size(159, 13);
             this.label1.TabIndex = 2;
@@ -551,7 +537,7 @@
             // 
             // numericUpDownChoisirNbDeMot
             // 
-            this.numericUpDownChoisirNbDeMot.Location = new System.Drawing.Point(186, 355);
+            this.numericUpDownChoisirNbDeMot.Location = new System.Drawing.Point(188, 357);
             this.numericUpDownChoisirNbDeMot.Maximum = new decimal(new int[] {
             32,
             0,
@@ -601,33 +587,66 @@
             // 
             // button2
             // 
-            this.button2.Location = new System.Drawing.Point(289, 357);
+            this.button2.Location = new System.Drawing.Point(308, 357);
             this.button2.Name = "button2";
             this.button2.Size = new System.Drawing.Size(228, 65);
             this.button2.TabIndex = 7;
-            this.button2.Text = "Débuter la partie";
+            this.button2.Text = "Débuter la partie/Recommencer";
             this.button2.UseVisualStyleBackColor = true;
             this.button2.Click += new System.EventHandler(this.btnDebuterPartie_Click);
             // 
             // timerCacherImage
             // 
             this.timerCacherImage.Interval = 4000;
-            this.timerCacherImage.Tick += new System.EventHandler(this.MasquerMots);
+            this.timerCacherImage.Tick += new System.EventHandler(this.timerCacherImage_Tick);
             // 
             // lblTempsRestant
             // 
             this.lblTempsRestant.AutoSize = true;
-            this.lblTempsRestant.Location = new System.Drawing.Point(27, 394);
+            this.lblTempsRestant.Location = new System.Drawing.Point(339, 425);
             this.lblTempsRestant.Name = "lblTempsRestant";
             this.lblTempsRestant.Size = new System.Drawing.Size(146, 13);
             this.lblTempsRestant.TabIndex = 8;
             this.lblTempsRestant.Text = "Appuyez sur Débuter la partie";
+            // 
+            // label3
+            // 
+            this.label3.AutoSize = true;
+            this.label3.Location = new System.Drawing.Point(12, 388);
+            this.label3.Name = "label3";
+            this.label3.Size = new System.Drawing.Size(217, 13);
+            this.label3.TabIndex = 9;
+            this.label3.Text = "Nombre de secondes pour afficher les mots :";
+            // 
+            // numericUpDownTimerModifierTemps
+            // 
+            this.numericUpDownTimerModifierTemps.Location = new System.Drawing.Point(235, 386);
+            this.numericUpDownTimerModifierTemps.Maximum = new decimal(new int[] {
+            20,
+            0,
+            0,
+            0});
+            this.numericUpDownTimerModifierTemps.Minimum = new decimal(new int[] {
+            1,
+            0,
+            0,
+            0});
+            this.numericUpDownTimerModifierTemps.Name = "numericUpDownTimerModifierTemps";
+            this.numericUpDownTimerModifierTemps.Size = new System.Drawing.Size(38, 20);
+            this.numericUpDownTimerModifierTemps.TabIndex = 10;
+            this.numericUpDownTimerModifierTemps.Value = new decimal(new int[] {
+            1,
+            0,
+            0,
+            0});
             // 
             // frmMemoryGameMain
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(804, 676);
+            this.Controls.Add(this.numericUpDownTimerModifierTemps);
+            this.Controls.Add(this.label3);
             this.Controls.Add(this.lblTempsRestant);
             this.Controls.Add(this.button2);
             this.Controls.Add(this.button1);
@@ -708,6 +727,7 @@
             this.menuStrip1.ResumeLayout(false);
             this.menuStrip1.PerformLayout();
             ((System.ComponentModel.ISupportInitialize)(this.numericUpDownChoisirNbDeMot)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.numericUpDownTimerModifierTemps)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -749,11 +769,9 @@
     private System.Windows.Forms.PictureBox pbImg24;
         private System.Windows.Forms.MenuStrip menuStrip1;
         private System.Windows.Forms.ToolStripMenuItem jeuToolStripMenuItem;
-        private System.Windows.Forms.ToolStripMenuItem recommencerPartieToolStripMenuItem;
         private System.Windows.Forms.ToolStripSeparator quitterLeJeuToolStripMenuItem;
         private System.Windows.Forms.ToolStripMenuItem quitterLeJeuToolStripMenuItem1;
         private System.Windows.Forms.ToolStripMenuItem optionToolStripMenuItem;
-        private System.Windows.Forms.ToolStripMenuItem tempsDaffichageToolStripMenuItem;
         private System.Windows.Forms.ToolStripMenuItem musiqueDambiancenceToolStripMenuItem;
         private System.Windows.Forms.ToolStripMenuItem commencerToolStripMenuItem;
         private System.Windows.Forms.ToolStripMenuItem arrêterToolStripMenuItem;
@@ -768,6 +786,8 @@
         private System.Windows.Forms.Button button2;
         private System.Windows.Forms.Timer timerCacherImage;
         private System.Windows.Forms.Label lblTempsRestant;
+        private System.Windows.Forms.Label label3;
+        private System.Windows.Forms.NumericUpDown numericUpDownTimerModifierTemps;
     }
 }
 

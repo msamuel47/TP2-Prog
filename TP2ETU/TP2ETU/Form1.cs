@@ -18,7 +18,9 @@ namespace TP2ETU
 {
     public partial class frmMemoryGameMain : Form
     {
+        private int compteurDeMot;
         private int[] indexImagesEtMots;
+        private int[] positionDesMots;
         private Random rnd = new Random();
         WindowsMediaPlayer mediaPlayer = new WindowsMediaPlayer();
 
@@ -76,8 +78,116 @@ namespace TP2ETU
         {
             InitializeComponent();
         }
+        #region fonction pour valider les mots
+
+        /// <summary>
+        /// La fonction sert à verifier les mots que les joueurs ont entré , elle extrait le texte
+        /// qui était contenu dans la boîte de texte et calcul le 'score' que le joueur à obtenue.
+        /// Contient également un système anti-triche
+        /// </summary>
+        void ValiderLeJeu()
+        {
+            if (mediaPlayer.playState == WMPPlayState.wmppsPlaying) //Fait arrêter la musique si elle
+                                                                    //joue.
+            {
+                mediaPlayer.controls.stop();
+            }
+            string[] motsARechercher = ObtenirMotsRecherches();
+            string[] motsAVerifier = ExtraireMotsEntresParJoueur();
+            compteurDeMot = 0; // Sert à compter combien de mots on été trouvé
+            for (int i = 0; i < motsAVerifier.Length; i++)
+            {
+                string motEnValidation = motsAVerifier[i];
+                for (int j = 0; j < motsARechercher.Length; j++)
+                {
+                    string motValidateur = motsARechercher[j];
+                    if (motEnValidation == motValidateur)
+                    {
+                        Debug.WriteLine("Mot trouvé :D");
+                        compteurDeMot++;
+                    }
+                }
+            }
+        }
+
+        string[] ObtenirMotsRecherches()
+        {
+            string[] listeDeMots = new string[indexImagesEtMots.Length];
+            for (int i = 0; i < indexImagesEtMots.Length; i++)
+            {
+                listeDeMots[i] = tousLesTextesAssociesAuxImages[indexImagesEtMots[i]];
+                Debug.WriteLine("Mot extrais : {0} trouvé dans l'indice {1} de l'indexImagesEtMots", listeDeMots[i],
+                    i);
+            }
+            return listeDeMots;
+        }
+
+        string[] ExtraireMotsEntresParJoueur()
+        {
+            string texteAExtraire = TexteAEntrerEtValider.Text;
+            string[] motsExtrais = texteAExtraire.Split(' ');
+            motsExtrais = ExtraireSousElementsUniques(motsExtrais);
+            return motsExtrais;
+        }
+
+        /// <summary>
+        /// Sert à extraires seulement les mots rentrés une seule fois. Cela sert à empecher les triches 
+        /// </summary>
+        /// <param name="tableauAVerifier"></param>
+        /// <returns>Le tableau avec seulement des mots uniques</returns>
+        string[] ExtraireSousElementsUniques(string[] tableauAVerifier)
+        {
+            string[] motsExtrais = new string[tableauAVerifier.Length];
+            motsExtrais[0] = tableauAVerifier[0];
+            Debug.WriteLine("Le mot {0} a ete ajoute a l indice 0", motsExtrais[0]);
+            string motAVerifier;
+            int indiceAVerifier = 1;
+            for (int i = 0; i < tableauAVerifier.Length; i++)
+            {
+                if (tableauAVerifier.Length <= 0)
+                // Si le nombre de mot entr/ est de 1 , null besoin de besoin d<extraire les 
+                {
+                    // Les elements
+                    break;
+                }
+                motAVerifier = tableauAVerifier[i];
+                for (int j = 0; j < motsExtrais.Length; j++)
+                {
+                    if (motAVerifier == motsExtrais[j])
+                    {
+                        Debug.WriteLine("Tricherie détectée");
+                        break;
+                    }
+                    if (j == motsExtrais.Length - 1)
+                    {
+                        motsExtrais[indiceAVerifier] = motAVerifier;
+                        Debug.WriteLine("Le mot {0} a ete ajouter a l'indice {1} du tabeleau", motAVerifier,
+                            indiceAVerifier);
+                        indiceAVerifier++;
+                    }
+                }
+            }
+            return motsExtrais;
+        }
+
+
+
+
+        #endregion
 
         #region Fonction pour débuter le jeu
+
+        /// <summary>
+        /// Sert à masquer les mots qui sont affiché dans les pictures box pour empecher que le joueur
+        /// voit les réponses
+        /// </summary>
+        void MasquerMots()
+        {
+            for (int i = 0; i < tousLesPicturesBox.Length; i++)
+            {
+                tousLesPicturesBox[i].BackgroundImage = toutesLesImagesAffichees[0];
+            }
+        }
 
         /// <summary>
         /// Sert à creer un index qui va distribué
@@ -93,36 +203,35 @@ namespace TP2ETU
         /// </summary>
         void ChoisirPositions()
         {
-            bool existantMotTableau = false;
-            int[] tableauDesPosition = new int[tousLesPicturesBox.Length];
-            for (int i = 0; i < tableauDesPosition.Length; i++)
+            positionDesMots = new int[indexImagesEtMots.Length];
+            int testerPosition;
+            bool motDejaPresent = false;
+            for (int i = 0; i < indexImagesEtMots.Length; i++)
                 {
-                    int random = rnd.Next(0, tousLesPicturesBox.Length);
+                    testerPosition = rnd.Next(0, tousLesPicturesBox.Length);
                     do
                         {
                             for (int j = i; j > 0; j--)
                                 {
-                                    if (tableauDesPosition[j] == random)
+                                    if (testerPosition == positionDesMots[j])
                                         {
-                                            existantMotTableau = true;
-                                            break;
+                                            motDejaPresent = true;
+                                            testerPosition = rnd.Next(0, tousLesPicturesBox.Length);
                                         }
                                 }
-                        } while (existantMotTableau == true);
-                    
-                    if (!existantMotTableau)
-                        {
-                            tableauDesPosition[i] = random;
-                        }
+                        } while (motDejaPresent);
+                    positionDesMots[i] = testerPosition;
                 }
+
         }
 
         void AfficherLesMots()
         {
             for (int i = 0; i < indexImagesEtMots.Length; i++)
                 {
-                    tousLesPicturesBox[i].BackgroundImage = toutesLesImagesAffichees[indexImagesEtMots[i]];
+                    tousLesPicturesBox[positionDesMots[i]].BackgroundImage = toutesLesImagesAffichees[indexImagesEtMots[i]];
                 }
+
         }
 
         #endregion
@@ -175,100 +284,7 @@ namespace TP2ETU
 
         #endregion
 
-        #region fonction pour valider les mots
-
-        /// <summary>
-        /// La fonction sert à verifier les mots que les joueurs ont entré , elle extrait le texte
-        /// qui était contenu dans la boîte de texte et calcul le 'score' que le joueur à obtenue.
-        /// Contient également un système anti-triche
-        /// </summary>
-        int ValiderLeJeu()
-        {
-            if (mediaPlayer.playState == WMPPlayState.wmppsPlaying) //Fait arrêter la musique si elle
-                //joue.
-                {
-                    mediaPlayer.controls.stop();
-                }
-            string[] motsARechercher = ObtenirMotsRecherches();
-            string[] motsAVerifier = ExtraireMotsEntresParJoueur();
-            int compteurDeMotsTrouves = 0; // Sert à compter combien de mots on été trouvé
-            for (int i = 0; i < motsAVerifier.Length; i++)
-                {
-                    string motEnValidation = motsAVerifier[i];
-                    for (int j = 0; j < motsARechercher.Length; j++)
-                        {
-                            string motValidateur = motsARechercher[j];
-                            if (motEnValidation == motValidateur)
-                                {
-                                    Debug.WriteLine("Mot trouvé :D");
-                                    compteurDeMotsTrouves++;
-                                }
-                        }
-                }
-            return compteurDeMotsTrouves;
-        }
-
-        string[] ObtenirMotsRecherches()
-        {
-            string[] listeDeMots = new string[indexImagesEtMots.Length];
-            for (int i = 0; i < indexImagesEtMots.Length; i++)
-                {
-                    listeDeMots[i] = tousLesTextesAssociesAuxImages[indexImagesEtMots[i]];
-                    Debug.WriteLine("Mot extrais : {0} trouvé dans l'indice {1} de l'indexImagesEtMots", listeDeMots[i],
-                        i);
-                }
-            return listeDeMots;
-        }
-
-        string[] ExtraireMotsEntresParJoueur()
-        {
-            string texteAExtraire = TexteAEntrerEtValider.Text;
-            string[] motsExtrais = texteAExtraire.Split(' ');
-            motsExtrais = ExtraireSousElementsUniques(motsExtrais);
-            return motsExtrais;
-        }
-
-        /// <summary>
-        /// Sert à extraires seulement les mots rentrés une seule fois. Cela sert à empecher les triches 
-        /// </summary>
-        /// <param name="tableauAVerifier"></param>
-        /// <returns>Le tableau avec seulement des mots uniques</returns>
-        string[] ExtraireSousElementsUniques(string[] tableauAVerifier)
-        {
-            string[] motsExtrais = new string[tableauAVerifier.Length];
-            motsExtrais[0] = tableauAVerifier[0];
-            Debug.WriteLine("Le mot {0} a ete ajoute a l indice 0", motsExtrais[0]);
-            string motAVerifier;
-            int indiceAVerifier = 1;
-            for (int i = 0; i < tableauAVerifier.Length; i++)
-                {
-                    if (tableauAVerifier.Length <= 0)
-                        // Si le nombre de mot entr/ est de 1 , null besoin de besoin d<extraire les 
-                        {
-                            // Les elements
-                            break;
-                        }
-                    motAVerifier = tableauAVerifier[i];
-                    for (int j = 0; j < motsExtrais.Length; j++)
-                        {
-                            if (motAVerifier == motsExtrais[j])
-                                {
-                                    Debug.WriteLine("Tricherie détectée");
-                                    break;
-                                }
-                            if (j == motsExtrais.Length - 1)
-                                {
-                                    motsExtrais[indiceAVerifier] = motAVerifier;
-                                    Debug.WriteLine("Le mot {0} a ete ajouter a l'indice {1} du tabeleau", motAVerifier,
-                                        indiceAVerifier);
-                                    indiceAVerifier++;
-                                }
-                        }
-                }
-            return motsExtrais;
-        }
-
-        #endregion
+       
 
         private void pbImg0_Click(object sender, EventArgs e)
         {
@@ -280,6 +296,9 @@ namespace TP2ETU
 
         private void qIEnHautDe85ToolStripMenuItem_Click(object sender, EventArgs e)
         {
+            MessageBox.Show("Bienvenue au jeu de mémoire , le but consiste à trouver le plus de mots possible dans" +
+                            " un jeu où les cartes sont affichées seulement durant un cour laps de temps",
+                "Le jeu de mémoire", MessageBoxButtons.OK, MessageBoxIcon.Information);
         }
 
         private void qiEnBasDe85ToolStripMenuItem_Click(object sender, EventArgs e)
@@ -329,24 +348,32 @@ namespace TP2ETU
         private void btnValiderLesMots_Click(object sender, EventArgs e)
         {
             ValiderLeJeu();
+            TexteAEntrerEtValider.Text = "Vous avez trouvé " + compteurDeMot + " mots";
+           AfficherLesMots();
         }
 
 
         private void btnDebuterPartie_Click(object sender, EventArgs e)
         {
-            timerCacherImage.Enabled = true;
+        
+            MasquerMots();
+            timerCacherImage.Interval = (int)numericUpDownTimerModifierTemps.Value*1000;
+            TexteAEntrerEtValider.Text = "";
+            indexImagesEtMots = new int[tousLesTextesAssociesAuxImages.Length];
+            compteurDeMot = 0;
+            timerCacherImage.Stop();
+            MasquerMots();
             ChoisirDesMots();
+            ChoisirPositions();
             AfficherLesMots();
             timerCacherImage.Start();
         }
 
-        private void MasquerMots(object sender, EventArgs e)
+        private void timerCacherImage_Tick(object sender, EventArgs e)
         {
-            for (int i = 0; i < tousLesPicturesBox.Length; i++)
-                {
-                    tousLesPicturesBox[i].BackgroundImage = toutesLesImagesAffichees[0];
-                }
-            timerCacherImage.Enabled = false;
+
+            MasquerMots();
+            timerCacherImage.Stop();
         }
     }
 }
