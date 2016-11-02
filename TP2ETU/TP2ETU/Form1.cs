@@ -190,7 +190,8 @@ namespace TP2ETU
         }
 
         /// <summary>
-        /// Sert à creer un index qui va distribué
+        /// Sert à creer un index qui va distribué les mots choisie, elle va modifier le tableau partagé
+        /// indexImagesEtMots pour qu'elle puisse être associé 
         /// </summary>
         void ChoisirDesMots()
         {
@@ -199,10 +200,12 @@ namespace TP2ETU
         }
 
         /// <summary>
-        /// Détermine les positions à mettre dans le tableau des picturesBox, 
+        /// Détermine les positions à mettre dans le tableau des picturesBox, elle choisie aussi uniquement
+        /// une seule position possible pur empecher les bugs.
         /// </summary>
         void ChoisirPositions()
         {
+
             positionDesMots = new int[indexImagesEtMots.Length];
             int testerPosition;
             bool motDejaPresent = false;
@@ -211,12 +214,13 @@ namespace TP2ETU
                     testerPosition = rnd.Next(0, tousLesPicturesBox.Length);
                     do
                         {
-                            for (int j = i; j >= 0; j--)
+                            for (int j = i; j > 0; j--)
                                 {
+                                    motDejaPresent = false;
                                     if (testerPosition == positionDesMots[j])
-                                        {
-                                            motDejaPresent = true;
+                                        { 
                                             testerPosition = rnd.Next(0, tousLesPicturesBox.Length);
+                                            motDejaPresent = true;
                                         }
                                 }
                         } while (motDejaPresent);
