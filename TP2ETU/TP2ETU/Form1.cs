@@ -191,7 +191,7 @@ namespace TP2ETU
 
         /// <summary>
         /// Sert à creer un index qui va distribué les mots choisie, elle va modifier le tableau partagé
-        /// indexImagesEtMots pour qu'elle puisse être associé 
+        /// indexImagesEtMots pour qu'elle puisse être associé avec les images à montrer à l'utilisateur
         /// </summary>
         void ChoisirDesMots()
         {
@@ -254,14 +254,14 @@ namespace TP2ETU
         int[] CreerTableauDeNombreAleatoireUnique(int nbMinimum, int nbMaximum, int tailleTableau)
         {
             int[] tableauARemplir = new int[tailleTableau];
-            tableauARemplir[0] = rnd.Next(nbMinimum, nbMaximum);
-            Debug.WriteLine("Le nombre {0} à été assigné à l'indice {1}", tableauARemplir[0], 0);
             int indiceAVerifier = nbMinimum - 1;
             for (int i = 0; i < tailleTableau; i++)
                 {
                     if (tailleTableau <= 1)
                         {
-                            Debug.WriteLine("Tableau plus petit ou égale à 1 ...");
+                    tableauARemplir[0] = rnd.Next(nbMinimum, nbMaximum);
+                    Debug.WriteLine("Le nombre {0} a été assigné à l'indice 0", tableauARemplir[0]);
+                    Debug.WriteLine("Tableau plus petit ou égale à 1 ...");
                             break;
                         }
                     int indexAAssigner = rnd.Next(nbMinimum, nbMaximum + 1);
@@ -333,6 +333,8 @@ namespace TP2ETU
                 }
             else if (resultat == DialogResult.No)
                 {
+                    MessageBox.Show("Merci Beaucoup de rester avec moi :D", "Jeu psycophate", MessageBoxButtons.OK,
+                        MessageBoxIcon.Exclamation);
                 }
         }
 
@@ -353,7 +355,7 @@ namespace TP2ETU
         private void btnValiderLesMots_Click(object sender, EventArgs e)
         {
             ValiderLeJeu();
-            TexteAEntrerEtValider.Text = "Vous avez trouvé " + compteurDeMot + " mots";
+            TexteAEntrerEtValider.Text = "Vous avez trouvé " + compteurDeMot + " mots sur " + numericUpDownChoisirNbDeMot.Value;
            AfficherLesMots();
         }
 
