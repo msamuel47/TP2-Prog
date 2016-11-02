@@ -386,6 +386,8 @@ namespace TP2ETU
         {
             this.BackColor = SystemColors.GradientActiveCaption;
             toutesLesImagesAffichees[0] = Resources.windowsClassic;
+            TexteAEntrerEtValider.BackColor = Color.White;
+            TexteAEntrerEtValider.BackColor = Color.White;
             foreach (PictureBox t in tousLesPicturesBox)
                 {
                     t.BackgroundImage = Resources.windowsClassic;
@@ -395,7 +397,17 @@ namespace TP2ETU
 
         private void ChangerThemePourMSDOSToolStripMenuItem_Click(object sender, EventArgs e)
         {
+            label1.ForeColor = Color.White;
+            label2.ForeColor = Color.White;
+            label3.ForeColor = Color.White;
             this.BackColor = Color.Black;
+            TexteAEntrerEtValider.BackColor = Color.Black;
+            TexteAEntrerEtValider.ForeColor = Color.GreenYellow;
+            toutesLesImagesAffichees[0] = Resources.msdoslogo_zps9f43bc2d;
+            foreach (PictureBox t in tousLesPicturesBox)
+                {
+                    t.BackgroundImage = Resources.msdoslogo_zps9f43bc2d;
+                }
 
         }
     }
