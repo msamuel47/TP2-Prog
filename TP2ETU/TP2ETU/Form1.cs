@@ -195,8 +195,28 @@ namespace TP2ETU
         /// </summary>
         void ChoisirDesMots()
         {
-            indexImagesEtMots = CreerTableauDeNombreAleatoireUnique(1, tousLesTextesAssociesAuxImages.Length - 1,
-                (int) numericUpDownChoisirNbDeMot.Value);
+            int testerPositionNombre;
+            indexImagesEtMots = new int[(int)numericUpDownChoisirNbDeMot.Value];
+            bool nombreDejaPresent = false;
+            for (int i = 0; i < indexImagesEtMots.Length; i++)
+            {
+                testerPositionNombre = rnd.Next(1, tousLesTextesAssociesAuxImages.Length);
+                do
+                {
+                    for (int j = i; j >= 0; j--)
+                    {
+                        nombreDejaPresent = false;
+                        if (testerPositionNombre == indexImagesEtMots[j])
+                        {
+                            
+                            testerPositionNombre = rnd.Next(1, tousLesTextesAssociesAuxImages.Length);
+                            nombreDejaPresent = true;
+                        }
+                    }
+                } while (nombreDejaPresent);
+                indexImagesEtMots[i] = testerPositionNombre;
+                Debug.WriteLine("Le nombre {0} a ete assigne a l indice {1}" , testerPositionNombre , i);
+            }
         }
 
         /// <summary>
@@ -240,57 +260,6 @@ namespace TP2ETU
         }
 
         #endregion
-
-        #region fonction de triage des nombres
-
-        /// <summary>
-        /// Sert à créer un tableau de nombre différents. Il prend 3 paramètres. nbMinimum définie le chiffre minimum à être généré
-        /// nbMaximum et celui du chiffre maximum. Longueur tableau sert à générer la longeur du tableau nécésaire.
-        /// </summary>
-        /// <param name="nbMinimum"></param>
-        /// <param name="nbMaximum"></param>
-        /// <param name="tailleTableau"></param>
-        /// <returns></returns>
-        int[] CreerTableauDeNombreAleatoireUnique(int nbMinimum, int nbMaximum, int tailleTableau)
-        {
-            int[] tableauARemplir = new int[tailleTableau];
-            int indiceAVerifier = nbMinimum - 1;
-            for (int i = 0; i < tailleTableau; i++)
-                {
-                    if (tailleTableau <= 1)
-                        {
-                    tableauARemplir[0] = rnd.Next(nbMinimum, nbMaximum);
-                    Debug.WriteLine("Le nombre {0} a été assigné à l'indice 0", tableauARemplir[0]);
-                    Debug.WriteLine("Tableau plus petit ou égale à 1 ...");
-                            break;
-                        }
-                    int indexAAssigner = rnd.Next(nbMinimum, nbMaximum + 1);
-                    for (int j = 0; j <= indiceAVerifier; j++)
-                        {
-                            if (indexAAssigner == tableauARemplir[j])
-                                {
-                                    while (indexAAssigner == tableauARemplir[j])
-                                        {
-                                            Debug.WriteLine("Le nombre {0} est déja dans le tableau", indexAAssigner);
-                                            indexAAssigner = rnd.Next(nbMinimum, nbMaximum + 1);
-                                        }
-                                }
-                            else if (indiceAVerifier == j)
-                                {
-                                    tableauARemplir[j] = indexAAssigner;
-                                    Debug.WriteLine("Le nombre {0} à été assigné à l'indice {1}", indexAAssigner, j);
-                                    indiceAVerifier++;
-                                    break;
-                                }
-                        }
-                }
-            return tableauARemplir;
-        }
-
-        #endregion
-
-       
-
         private void pbImg0_Click(object sender, EventArgs e)
         {
         }

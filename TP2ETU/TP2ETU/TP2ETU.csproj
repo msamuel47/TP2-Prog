@@ -130,6 +130,8 @@
     </Content>
     <Content Include="Art\msdoslogo_zps9f43bc2d.png" />
     <Content Include="Art\windowsClassic.png" />
+    <None Include="Resources\Windows_logo_%28Pre-XP%29_alt._color.svg.png" />
+    <None Include="Resources\images.png" />
     <None Include="Resources\msdoslogo_zps9f43bc2d.png" />
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />

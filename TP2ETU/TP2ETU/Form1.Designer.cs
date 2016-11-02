@@ -374,7 +374,7 @@
             // 
             // pbImg24
             // 
-            this.pbImg24.BackgroundImage = global::TP2ETU.Properties.Resources.imgHiddenCard;
+            this.pbImg24.BackgroundImage = Properties.Resources.imgHiddenCard;
             this.pbImg24.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
             this.pbImg24.Location = new System.Drawing.Point(26, 271);
             this.pbImg24.Name = "pbImg24";
