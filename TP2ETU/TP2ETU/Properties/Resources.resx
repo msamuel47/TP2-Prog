@@ -151,4 +151,10 @@
   <data name="rat" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>..\Art\rat.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
+  <data name="msdoslogo_zps9f43bc2d" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\msdoslogo_zps9f43bc2d.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="windowsClassic" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\art\windowsclassic.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
 </root>

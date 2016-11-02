@@ -143,6 +143,16 @@ namespace TP2ETU.Properties {
         /// <summary>
         ///   Recherche une ressource localisée de type System.Drawing.Bitmap.
         /// </summary>
+        internal static System.Drawing.Bitmap msdoslogo_zps9f43bc2d {
+            get {
+                object obj = ResourceManager.GetObject("msdoslogo_zps9f43bc2d", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Recherche une ressource localisée de type System.Drawing.Bitmap.
+        /// </summary>
         internal static System.Drawing.Bitmap poisson {
             get {
                 object obj = ResourceManager.GetObject("poisson", resourceCulture);
@@ -166,6 +176,16 @@ namespace TP2ETU.Properties {
         internal static System.Drawing.Bitmap souris {
             get {
                 object obj = ResourceManager.GetObject("souris", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Recherche une ressource localisée de type System.Drawing.Bitmap.
+        /// </summary>
+        internal static System.Drawing.Bitmap windowsClassic {
+            get {
+                object obj = ResourceManager.GetObject("windowsClassic", resourceCulture);
                 return ((System.Drawing.Bitmap)(obj));
             }
         }

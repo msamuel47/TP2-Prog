@@ -29,6 +29,33 @@
     private void InitializeComponent()
     {
             this.components = new System.ComponentModel.Container();
+            this.menuStrip1 = new System.Windows.Forms.MenuStrip();
+            this.jeuToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+            this.toolStripMenuItem1 = new System.Windows.Forms.ToolStripMenuItem();
+            this.qIEnHautDe85ToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+            this.qiEnBasDe85ToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+            this.quitterLeJeuToolStripMenuItem = new System.Windows.Forms.ToolStripSeparator();
+            this.quitterLeJeuToolStripMenuItem1 = new System.Windows.Forms.ToolStripMenuItem();
+            this.optionToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+            this.musiqueDambiancenceToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+            this.commencerToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+            this.arrêterToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+            this.apToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+            this.windowsClassicToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+            this.imBlueDabediToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+            this.dabedaiToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+            this.deezNutsToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+            this.windows98ToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+            this.label1 = new System.Windows.Forms.Label();
+            this.numericUpDownChoisirNbDeMot = new System.Windows.Forms.NumericUpDown();
+            this.TexteAEntrerEtValider = new System.Windows.Forms.TextBox();
+            this.label2 = new System.Windows.Forms.Label();
+            this.button1 = new System.Windows.Forms.Button();
+            this.button2 = new System.Windows.Forms.Button();
+            this.timerCacherImage = new System.Windows.Forms.Timer(this.components);
+            this.lblTempsRestant = new System.Windows.Forms.Label();
+            this.label3 = new System.Windows.Forms.Label();
+            this.numericUpDownTimerModifierTemps = new System.Windows.Forms.NumericUpDown();
             this.pbImg24 = new System.Windows.Forms.PictureBox();
             this.pbImg16 = new System.Windows.Forms.PictureBox();
             this.pbImg8 = new System.Windows.Forms.PictureBox();
@@ -61,27 +88,9 @@
             this.pbImg9 = new System.Windows.Forms.PictureBox();
             this.pbImg6 = new System.Windows.Forms.PictureBox();
             this.pbImg1 = new System.Windows.Forms.PictureBox();
-            this.menuStrip1 = new System.Windows.Forms.MenuStrip();
-            this.jeuToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
-            this.toolStripMenuItem1 = new System.Windows.Forms.ToolStripMenuItem();
-            this.qIEnHautDe85ToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
-            this.qiEnBasDe85ToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
-            this.quitterLeJeuToolStripMenuItem = new System.Windows.Forms.ToolStripSeparator();
-            this.quitterLeJeuToolStripMenuItem1 = new System.Windows.Forms.ToolStripMenuItem();
-            this.optionToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
-            this.musiqueDambiancenceToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
-            this.commencerToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
-            this.arrêterToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
-            this.label1 = new System.Windows.Forms.Label();
-            this.numericUpDownChoisirNbDeMot = new System.Windows.Forms.NumericUpDown();
-            this.TexteAEntrerEtValider = new System.Windows.Forms.TextBox();
-            this.label2 = new System.Windows.Forms.Label();
-            this.button1 = new System.Windows.Forms.Button();
-            this.button2 = new System.Windows.Forms.Button();
-            this.timerCacherImage = new System.Windows.Forms.Timer(this.components);
-            this.lblTempsRestant = new System.Windows.Forms.Label();
-            this.label3 = new System.Windows.Forms.Label();
-            this.numericUpDownTimerModifierTemps = new System.Windows.Forms.NumericUpDown();
+            this.menuStrip1.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.numericUpDownChoisirNbDeMot)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.numericUpDownTimerModifierTemps)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.pbImg24)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.pbImg16)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.pbImg8)).BeginInit();
@@ -114,10 +123,254 @@
             ((System.ComponentModel.ISupportInitialize)(this.pbImg9)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.pbImg6)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.pbImg1)).BeginInit();
-            this.menuStrip1.SuspendLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.numericUpDownChoisirNbDeMot)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.numericUpDownTimerModifierTemps)).BeginInit();
             this.SuspendLayout();
+            // 
+            // menuStrip1
+            // 
+            this.menuStrip1.Items.AddRange(new System.Windows.Forms.ToolStripItem[] {
+            this.jeuToolStripMenuItem,
+            this.optionToolStripMenuItem});
+            this.menuStrip1.Location = new System.Drawing.Point(0, 0);
+            this.menuStrip1.Name = "menuStrip1";
+            this.menuStrip1.Size = new System.Drawing.Size(804, 24);
+            this.menuStrip1.TabIndex = 1;
+            this.menuStrip1.Text = "menuStrip1";
+            // 
+            // jeuToolStripMenuItem
+            // 
+            this.jeuToolStripMenuItem.DropDownItems.AddRange(new System.Windows.Forms.ToolStripItem[] {
+            this.toolStripMenuItem1,
+            this.quitterLeJeuToolStripMenuItem,
+            this.quitterLeJeuToolStripMenuItem1});
+            this.jeuToolStripMenuItem.Name = "jeuToolStripMenuItem";
+            this.jeuToolStripMenuItem.Size = new System.Drawing.Size(36, 20);
+            this.jeuToolStripMenuItem.Text = "Jeu";
+            // 
+            // toolStripMenuItem1
+            // 
+            this.toolStripMenuItem1.DropDownItems.AddRange(new System.Windows.Forms.ToolStripItem[] {
+            this.qIEnHautDe85ToolStripMenuItem,
+            this.qiEnBasDe85ToolStripMenuItem});
+            this.toolStripMenuItem1.Name = "toolStripMenuItem1";
+            this.toolStripMenuItem1.Size = new System.Drawing.Size(170, 22);
+            this.toolStripMenuItem1.Text = "Comment jouer ...";
+            // 
+            // qIEnHautDe85ToolStripMenuItem
+            // 
+            this.qIEnHautDe85ToolStripMenuItem.Name = "qIEnHautDe85ToolStripMenuItem";
+            this.qIEnHautDe85ToolStripMenuItem.Size = new System.Drawing.Size(160, 22);
+            this.qIEnHautDe85ToolStripMenuItem.Text = "QI en haut de 85";
+            this.qIEnHautDe85ToolStripMenuItem.Click += new System.EventHandler(this.qIEnHautDe85ToolStripMenuItem_Click);
+            // 
+            // qiEnBasDe85ToolStripMenuItem
+            // 
+            this.qiEnBasDe85ToolStripMenuItem.Name = "qiEnBasDe85ToolStripMenuItem";
+            this.qiEnBasDe85ToolStripMenuItem.Size = new System.Drawing.Size(160, 22);
+            this.qiEnBasDe85ToolStripMenuItem.Text = "QI en bas de 85";
+            this.qiEnBasDe85ToolStripMenuItem.Click += new System.EventHandler(this.qiEnBasDe85ToolStripMenuItem_Click);
+            // 
+            // quitterLeJeuToolStripMenuItem
+            // 
+            this.quitterLeJeuToolStripMenuItem.Name = "quitterLeJeuToolStripMenuItem";
+            this.quitterLeJeuToolStripMenuItem.Size = new System.Drawing.Size(167, 6);
+            // 
+            // quitterLeJeuToolStripMenuItem1
+            // 
+            this.quitterLeJeuToolStripMenuItem1.Name = "quitterLeJeuToolStripMenuItem1";
+            this.quitterLeJeuToolStripMenuItem1.Size = new System.Drawing.Size(170, 22);
+            this.quitterLeJeuToolStripMenuItem1.Text = "Quitter le jeu";
+            this.quitterLeJeuToolStripMenuItem1.Click += new System.EventHandler(this.quitterLeJeuToolStripMenuItem1_Click);
+            // 
+            // optionToolStripMenuItem
+            // 
+            this.optionToolStripMenuItem.DropDownItems.AddRange(new System.Windows.Forms.ToolStripItem[] {
+            this.musiqueDambiancenceToolStripMenuItem,
+            this.apToolStripMenuItem});
+            this.optionToolStripMenuItem.Name = "optionToolStripMenuItem";
+            this.optionToolStripMenuItem.Size = new System.Drawing.Size(56, 20);
+            this.optionToolStripMenuItem.Text = "Option";
+            // 
+            // musiqueDambiancenceToolStripMenuItem
+            // 
+            this.musiqueDambiancenceToolStripMenuItem.DropDownItems.AddRange(new System.Windows.Forms.ToolStripItem[] {
+            this.commencerToolStripMenuItem,
+            this.arrêterToolStripMenuItem});
+            this.musiqueDambiancenceToolStripMenuItem.Name = "musiqueDambiancenceToolStripMenuItem";
+            this.musiqueDambiancenceToolStripMenuItem.Size = new System.Drawing.Size(204, 22);
+            this.musiqueDambiancenceToolStripMenuItem.Text = "Musique d\'ambiancence";
+            // 
+            // commencerToolStripMenuItem
+            // 
+            this.commencerToolStripMenuItem.Name = "commencerToolStripMenuItem";
+            this.commencerToolStripMenuItem.Size = new System.Drawing.Size(140, 22);
+            this.commencerToolStripMenuItem.Text = "Commencer";
+            this.commencerToolStripMenuItem.Click += new System.EventHandler(this.commencerLaMusiqueToolStripMenuItem_Click);
+            // 
+            // arrêterToolStripMenuItem
+            // 
+            this.arrêterToolStripMenuItem.Name = "arrêterToolStripMenuItem";
+            this.arrêterToolStripMenuItem.Size = new System.Drawing.Size(140, 22);
+            this.arrêterToolStripMenuItem.Text = "Arrêter";
+            this.arrêterToolStripMenuItem.Click += new System.EventHandler(this.ArreterLaMusiqueStripMenuItem_Click);
+            // 
+            // apToolStripMenuItem
+            // 
+            this.apToolStripMenuItem.DropDownItems.AddRange(new System.Windows.Forms.ToolStripItem[] {
+            this.windowsClassicToolStripMenuItem,
+            this.imBlueDabediToolStripMenuItem,
+            this.deezNutsToolStripMenuItem,
+            this.windows98ToolStripMenuItem});
+            this.apToolStripMenuItem.Name = "apToolStripMenuItem";
+            this.apToolStripMenuItem.Size = new System.Drawing.Size(204, 22);
+            this.apToolStripMenuItem.Text = "Apparence";
+            // 
+            // windowsClassicToolStripMenuItem
+            // 
+            this.windowsClassicToolStripMenuItem.Name = "windowsClassicToolStripMenuItem";
+            this.windowsClassicToolStripMenuItem.Size = new System.Drawing.Size(162, 22);
+            this.windowsClassicToolStripMenuItem.Text = "Windows Classic";
+            this.windowsClassicToolStripMenuItem.Click += new System.EventHandler(this.changerThemePourWindowsClassicToolStripMenuItem_Click);
+            // 
+            // imBlueDabediToolStripMenuItem
+            // 
+            this.imBlueDabediToolStripMenuItem.DropDownItems.AddRange(new System.Windows.Forms.ToolStripItem[] {
+            this.dabedaiToolStripMenuItem});
+            this.imBlueDabediToolStripMenuItem.Name = "imBlueDabediToolStripMenuItem";
+            this.imBlueDabediToolStripMenuItem.Size = new System.Drawing.Size(162, 22);
+            this.imBlueDabediToolStripMenuItem.Text = "I\"m blue dabedi";
+            // 
+            // dabedaiToolStripMenuItem
+            // 
+            this.dabedaiToolStripMenuItem.Name = "dabedaiToolStripMenuItem";
+            this.dabedaiToolStripMenuItem.Size = new System.Drawing.Size(116, 22);
+            this.dabedaiToolStripMenuItem.Text = "dabedai";
+            // 
+            // deezNutsToolStripMenuItem
+            // 
+            this.deezNutsToolStripMenuItem.Name = "deezNutsToolStripMenuItem";
+            this.deezNutsToolStripMenuItem.Size = new System.Drawing.Size(162, 22);
+            this.deezNutsToolStripMenuItem.Text = "Deez nuts ?";
+            // 
+            // windows98ToolStripMenuItem
+            // 
+            this.windows98ToolStripMenuItem.Name = "windows98ToolStripMenuItem";
+            this.windows98ToolStripMenuItem.Size = new System.Drawing.Size(162, 22);
+            this.windows98ToolStripMenuItem.Text = "MS-DOS";
+            this.windows98ToolStripMenuItem.Click += new System.EventHandler(this.ChangerThemePourMSDOSToolStripMenuItem_Click);
+            // 
+            // label1
+            // 
+            this.label1.AutoSize = true;
+            this.label1.Location = new System.Drawing.Point(23, 357);
+            this.label1.Name = "label1";
+            this.label1.Size = new System.Drawing.Size(159, 13);
+            this.label1.TabIndex = 2;
+            this.label1.Text = "Nombre de mot(s) à rechercher :";
+            // 
+            // numericUpDownChoisirNbDeMot
+            // 
+            this.numericUpDownChoisirNbDeMot.Location = new System.Drawing.Point(188, 357);
+            this.numericUpDownChoisirNbDeMot.Maximum = new decimal(new int[] {
+            32,
+            0,
+            0,
+            0});
+            this.numericUpDownChoisirNbDeMot.Minimum = new decimal(new int[] {
+            1,
+            0,
+            0,
+            0});
+            this.numericUpDownChoisirNbDeMot.Name = "numericUpDownChoisirNbDeMot";
+            this.numericUpDownChoisirNbDeMot.Size = new System.Drawing.Size(44, 20);
+            this.numericUpDownChoisirNbDeMot.TabIndex = 3;
+            this.numericUpDownChoisirNbDeMot.Value = new decimal(new int[] {
+            1,
+            0,
+            0,
+            0});
+            // 
+            // TexteAEntrerEtValider
+            // 
+            this.TexteAEntrerEtValider.Location = new System.Drawing.Point(26, 443);
+            this.TexteAEntrerEtValider.Multiline = true;
+            this.TexteAEntrerEtValider.Name = "TexteAEntrerEtValider";
+            this.TexteAEntrerEtValider.Size = new System.Drawing.Size(745, 199);
+            this.TexteAEntrerEtValider.TabIndex = 4;
+            // 
+            // label2
+            // 
+            this.label2.AutoSize = true;
+            this.label2.Location = new System.Drawing.Point(24, 427);
+            this.label2.Name = "label2";
+            this.label2.Size = new System.Drawing.Size(218, 13);
+            this.label2.TabIndex = 5;
+            this.label2.Text = "Veuillez séparer les mots avec des espaces :";
+            // 
+            // button1
+            // 
+            this.button1.BackColor = System.Drawing.SystemColors.ActiveCaption;
+            this.button1.Location = new System.Drawing.Point(542, 357);
+            this.button1.Name = "button1";
+            this.button1.Size = new System.Drawing.Size(228, 65);
+            this.button1.TabIndex = 6;
+            this.button1.Text = "Valider les mots !";
+            this.button1.UseVisualStyleBackColor = false;
+            this.button1.Click += new System.EventHandler(this.btnValiderLesMots_Click);
+            // 
+            // button2
+            // 
+            this.button2.Location = new System.Drawing.Point(308, 357);
+            this.button2.Name = "button2";
+            this.button2.Size = new System.Drawing.Size(228, 65);
+            this.button2.TabIndex = 7;
+            this.button2.Text = "Débuter la partie/Recommencer";
+            this.button2.UseVisualStyleBackColor = true;
+            this.button2.Click += new System.EventHandler(this.btnDebuterPartie_Click);
+            // 
+            // timerCacherImage
+            // 
+            this.timerCacherImage.Interval = 4000;
+            this.timerCacherImage.Tick += new System.EventHandler(this.timerCacherImage_Tick);
+            // 
+            // lblTempsRestant
+            // 
+            this.lblTempsRestant.AutoSize = true;
+            this.lblTempsRestant.Location = new System.Drawing.Point(339, 425);
+            this.lblTempsRestant.Name = "lblTempsRestant";
+            this.lblTempsRestant.Size = new System.Drawing.Size(146, 13);
+            this.lblTempsRestant.TabIndex = 8;
+            this.lblTempsRestant.Text = "Appuyez sur Débuter la partie";
+            // 
+            // label3
+            // 
+            this.label3.AutoSize = true;
+            this.label3.Location = new System.Drawing.Point(12, 388);
+            this.label3.Name = "label3";
+            this.label3.Size = new System.Drawing.Size(217, 13);
+            this.label3.TabIndex = 9;
+            this.label3.Text = "Nombre de secondes pour afficher les mots :";
+            // 
+            // numericUpDownTimerModifierTemps
+            // 
+            this.numericUpDownTimerModifierTemps.Location = new System.Drawing.Point(235, 386);
+            this.numericUpDownTimerModifierTemps.Maximum = new decimal(new int[] {
+            20,
+            0,
+            0,
+            0});
+            this.numericUpDownTimerModifierTemps.Minimum = new decimal(new int[] {
+            1,
+            0,
+            0,
+            0});
+            this.numericUpDownTimerModifierTemps.Name = "numericUpDownTimerModifierTemps";
+            this.numericUpDownTimerModifierTemps.Size = new System.Drawing.Size(38, 20);
+            this.numericUpDownTimerModifierTemps.TabIndex = 10;
+            this.numericUpDownTimerModifierTemps.Value = new decimal(new int[] {
+            1,
+            0,
+            0,
+            0});
             // 
             // pbImg24
             // 
@@ -439,211 +692,11 @@
             this.pbImg1.TabIndex = 0;
             this.pbImg1.TabStop = false;
             // 
-            // menuStrip1
-            // 
-            this.menuStrip1.Items.AddRange(new System.Windows.Forms.ToolStripItem[] {
-            this.jeuToolStripMenuItem,
-            this.optionToolStripMenuItem});
-            this.menuStrip1.Location = new System.Drawing.Point(0, 0);
-            this.menuStrip1.Name = "menuStrip1";
-            this.menuStrip1.Size = new System.Drawing.Size(804, 24);
-            this.menuStrip1.TabIndex = 1;
-            this.menuStrip1.Text = "menuStrip1";
-            // 
-            // jeuToolStripMenuItem
-            // 
-            this.jeuToolStripMenuItem.DropDownItems.AddRange(new System.Windows.Forms.ToolStripItem[] {
-            this.toolStripMenuItem1,
-            this.quitterLeJeuToolStripMenuItem,
-            this.quitterLeJeuToolStripMenuItem1});
-            this.jeuToolStripMenuItem.Name = "jeuToolStripMenuItem";
-            this.jeuToolStripMenuItem.Size = new System.Drawing.Size(36, 20);
-            this.jeuToolStripMenuItem.Text = "Jeu";
-            // 
-            // toolStripMenuItem1
-            // 
-            this.toolStripMenuItem1.DropDownItems.AddRange(new System.Windows.Forms.ToolStripItem[] {
-            this.qIEnHautDe85ToolStripMenuItem,
-            this.qiEnBasDe85ToolStripMenuItem});
-            this.toolStripMenuItem1.Name = "toolStripMenuItem1";
-            this.toolStripMenuItem1.Size = new System.Drawing.Size(184, 22);
-            this.toolStripMenuItem1.Text = "Comment jouer ...";
-            // 
-            // qIEnHautDe85ToolStripMenuItem
-            // 
-            this.qIEnHautDe85ToolStripMenuItem.Name = "qIEnHautDe85ToolStripMenuItem";
-            this.qIEnHautDe85ToolStripMenuItem.Size = new System.Drawing.Size(160, 22);
-            this.qIEnHautDe85ToolStripMenuItem.Text = "QI en haut de 85";
-            this.qIEnHautDe85ToolStripMenuItem.Click += new System.EventHandler(this.qIEnHautDe85ToolStripMenuItem_Click);
-            // 
-            // qiEnBasDe85ToolStripMenuItem
-            // 
-            this.qiEnBasDe85ToolStripMenuItem.Name = "qiEnBasDe85ToolStripMenuItem";
-            this.qiEnBasDe85ToolStripMenuItem.Size = new System.Drawing.Size(160, 22);
-            this.qiEnBasDe85ToolStripMenuItem.Text = "QI en bas de 85";
-            this.qiEnBasDe85ToolStripMenuItem.Click += new System.EventHandler(this.qiEnBasDe85ToolStripMenuItem_Click);
-            // 
-            // quitterLeJeuToolStripMenuItem
-            // 
-            this.quitterLeJeuToolStripMenuItem.Name = "quitterLeJeuToolStripMenuItem";
-            this.quitterLeJeuToolStripMenuItem.Size = new System.Drawing.Size(181, 6);
-            // 
-            // quitterLeJeuToolStripMenuItem1
-            // 
-            this.quitterLeJeuToolStripMenuItem1.Name = "quitterLeJeuToolStripMenuItem1";
-            this.quitterLeJeuToolStripMenuItem1.Size = new System.Drawing.Size(184, 22);
-            this.quitterLeJeuToolStripMenuItem1.Text = "Quitter le jeu";
-            this.quitterLeJeuToolStripMenuItem1.Click += new System.EventHandler(this.quitterLeJeuToolStripMenuItem1_Click);
-            // 
-            // optionToolStripMenuItem
-            // 
-            this.optionToolStripMenuItem.DropDownItems.AddRange(new System.Windows.Forms.ToolStripItem[] {
-            this.musiqueDambiancenceToolStripMenuItem});
-            this.optionToolStripMenuItem.Name = "optionToolStripMenuItem";
-            this.optionToolStripMenuItem.Size = new System.Drawing.Size(56, 20);
-            this.optionToolStripMenuItem.Text = "Option";
-            // 
-            // musiqueDambiancenceToolStripMenuItem
-            // 
-            this.musiqueDambiancenceToolStripMenuItem.DropDownItems.AddRange(new System.Windows.Forms.ToolStripItem[] {
-            this.commencerToolStripMenuItem,
-            this.arrêterToolStripMenuItem});
-            this.musiqueDambiancenceToolStripMenuItem.Name = "musiqueDambiancenceToolStripMenuItem";
-            this.musiqueDambiancenceToolStripMenuItem.Size = new System.Drawing.Size(204, 22);
-            this.musiqueDambiancenceToolStripMenuItem.Text = "Musique d\'ambiancence";
-            // 
-            // commencerToolStripMenuItem
-            // 
-            this.commencerToolStripMenuItem.Name = "commencerToolStripMenuItem";
-            this.commencerToolStripMenuItem.Size = new System.Drawing.Size(152, 22);
-            this.commencerToolStripMenuItem.Text = "Commencer";
-            this.commencerToolStripMenuItem.Click += new System.EventHandler(this.commencerLaMusiqueToolStripMenuItem_Click);
-            // 
-            // arrêterToolStripMenuItem
-            // 
-            this.arrêterToolStripMenuItem.Name = "arrêterToolStripMenuItem";
-            this.arrêterToolStripMenuItem.Size = new System.Drawing.Size(152, 22);
-            this.arrêterToolStripMenuItem.Text = "Arrêter";
-            this.arrêterToolStripMenuItem.Click += new System.EventHandler(this.ArreterLaMusiqueStripMenuItem_Click);
-            // 
-            // label1
-            // 
-            this.label1.AutoSize = true;
-            this.label1.Location = new System.Drawing.Point(23, 357);
-            this.label1.Name = "label1";
-            this.label1.Size = new System.Drawing.Size(159, 13);
-            this.label1.TabIndex = 2;
-            this.label1.Text = "Nombre de mot(s) à rechercher :";
-            // 
-            // numericUpDownChoisirNbDeMot
-            // 
-            this.numericUpDownChoisirNbDeMot.Location = new System.Drawing.Point(188, 357);
-            this.numericUpDownChoisirNbDeMot.Maximum = new decimal(new int[] {
-            32,
-            0,
-            0,
-            0});
-            this.numericUpDownChoisirNbDeMot.Minimum = new decimal(new int[] {
-            1,
-            0,
-            0,
-            0});
-            this.numericUpDownChoisirNbDeMot.Name = "numericUpDownChoisirNbDeMot";
-            this.numericUpDownChoisirNbDeMot.Size = new System.Drawing.Size(44, 20);
-            this.numericUpDownChoisirNbDeMot.TabIndex = 3;
-            this.numericUpDownChoisirNbDeMot.Value = new decimal(new int[] {
-            1,
-            0,
-            0,
-            0});
-            // 
-            // TexteAEntrerEtValider
-            // 
-            this.TexteAEntrerEtValider.Location = new System.Drawing.Point(26, 443);
-            this.TexteAEntrerEtValider.Multiline = true;
-            this.TexteAEntrerEtValider.Name = "TexteAEntrerEtValider";
-            this.TexteAEntrerEtValider.Size = new System.Drawing.Size(745, 199);
-            this.TexteAEntrerEtValider.TabIndex = 4;
-            // 
-            // label2
-            // 
-            this.label2.AutoSize = true;
-            this.label2.Location = new System.Drawing.Point(24, 427);
-            this.label2.Name = "label2";
-            this.label2.Size = new System.Drawing.Size(218, 13);
-            this.label2.TabIndex = 5;
-            this.label2.Text = "Veuillez séparer les mots avec des espaces :";
-            // 
-            // button1
-            // 
-            this.button1.BackColor = System.Drawing.SystemColors.ActiveCaption;
-            this.button1.Location = new System.Drawing.Point(542, 357);
-            this.button1.Name = "button1";
-            this.button1.Size = new System.Drawing.Size(228, 65);
-            this.button1.TabIndex = 6;
-            this.button1.Text = "Valider les mots !";
-            this.button1.UseVisualStyleBackColor = false;
-            this.button1.Click += new System.EventHandler(this.btnValiderLesMots_Click);
-            // 
-            // button2
-            // 
-            this.button2.Location = new System.Drawing.Point(308, 357);
-            this.button2.Name = "button2";
-            this.button2.Size = new System.Drawing.Size(228, 65);
-            this.button2.TabIndex = 7;
-            this.button2.Text = "Débuter la partie/Recommencer";
-            this.button2.UseVisualStyleBackColor = true;
-            this.button2.Click += new System.EventHandler(this.btnDebuterPartie_Click);
-            // 
-            // timerCacherImage
-            // 
-            this.timerCacherImage.Interval = 4000;
-            this.timerCacherImage.Tick += new System.EventHandler(this.timerCacherImage_Tick);
-            // 
-            // lblTempsRestant
-            // 
-            this.lblTempsRestant.AutoSize = true;
-            this.lblTempsRestant.Location = new System.Drawing.Point(339, 425);
-            this.lblTempsRestant.Name = "lblTempsRestant";
-            this.lblTempsRestant.Size = new System.Drawing.Size(146, 13);
-            this.lblTempsRestant.TabIndex = 8;
-            this.lblTempsRestant.Text = "Appuyez sur Débuter la partie";
-            // 
-            // label3
-            // 
-            this.label3.AutoSize = true;
-            this.label3.Location = new System.Drawing.Point(12, 388);
-            this.label3.Name = "label3";
-            this.label3.Size = new System.Drawing.Size(217, 13);
-            this.label3.TabIndex = 9;
-            this.label3.Text = "Nombre de secondes pour afficher les mots :";
-            // 
-            // numericUpDownTimerModifierTemps
-            // 
-            this.numericUpDownTimerModifierTemps.Location = new System.Drawing.Point(235, 386);
-            this.numericUpDownTimerModifierTemps.Maximum = new decimal(new int[] {
-            20,
-            0,
-            0,
-            0});
-            this.numericUpDownTimerModifierTemps.Minimum = new decimal(new int[] {
-            1,
-            0,
-            0,
-            0});
-            this.numericUpDownTimerModifierTemps.Name = "numericUpDownTimerModifierTemps";
-            this.numericUpDownTimerModifierTemps.Size = new System.Drawing.Size(38, 20);
-            this.numericUpDownTimerModifierTemps.TabIndex = 10;
-            this.numericUpDownTimerModifierTemps.Value = new decimal(new int[] {
-            1,
-            0,
-            0,
-            0});
-            // 
             // frmMemoryGameMain
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
+            this.BackColor = System.Drawing.SystemColors.ButtonFace;
             this.ClientSize = new System.Drawing.Size(804, 676);
             this.Controls.Add(this.numericUpDownTimerModifierTemps);
             this.Controls.Add(this.label3);
@@ -692,6 +745,10 @@
             this.Name = "frmMemoryGameMain";
             this.Text = "Jeu de mémoire";
             this.Load += new System.EventHandler(this.frmMemoryGameMain_Load);
+            this.menuStrip1.ResumeLayout(false);
+            this.menuStrip1.PerformLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.numericUpDownChoisirNbDeMot)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.numericUpDownTimerModifierTemps)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.pbImg24)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.pbImg16)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.pbImg8)).EndInit();
@@ -724,10 +781,6 @@
             ((System.ComponentModel.ISupportInitialize)(this.pbImg9)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.pbImg6)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.pbImg1)).EndInit();
-            this.menuStrip1.ResumeLayout(false);
-            this.menuStrip1.PerformLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.numericUpDownChoisirNbDeMot)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.numericUpDownTimerModifierTemps)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -788,6 +841,12 @@
         private System.Windows.Forms.Label lblTempsRestant;
         private System.Windows.Forms.Label label3;
         private System.Windows.Forms.NumericUpDown numericUpDownTimerModifierTemps;
+        private System.Windows.Forms.ToolStripMenuItem apToolStripMenuItem;
+        private System.Windows.Forms.ToolStripMenuItem windowsClassicToolStripMenuItem;
+        private System.Windows.Forms.ToolStripMenuItem imBlueDabediToolStripMenuItem;
+        private System.Windows.Forms.ToolStripMenuItem dabedaiToolStripMenuItem;
+        private System.Windows.Forms.ToolStripMenuItem deezNutsToolStripMenuItem;
+        private System.Windows.Forms.ToolStripMenuItem windows98ToolStripMenuItem;
     }
 }
 

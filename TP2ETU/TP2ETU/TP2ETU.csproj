@@ -128,6 +128,9 @@
     <Content Include="Art\background.mp3">
       <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
     </Content>
+    <Content Include="Art\msdoslogo_zps9f43bc2d.png" />
+    <Content Include="Art\windowsClassic.png" />
+    <None Include="Resources\msdoslogo_zps9f43bc2d.png" />
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
   <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 

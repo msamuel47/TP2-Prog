@@ -382,6 +382,22 @@ namespace TP2ETU
             MasquerMots();
             timerCacherImage.Stop();
         }
+        private void changerThemePourWindowsClassicToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            this.BackColor = SystemColors.GradientActiveCaption;
+            toutesLesImagesAffichees[0] = Resources.windowsClassic;
+            foreach (PictureBox t in tousLesPicturesBox)
+                {
+                    t.BackgroundImage = Resources.windowsClassic;
+                }
+           
+        }
+
+        private void ChangerThemePourMSDOSToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            this.BackColor = Color.Black;
+
+        }
     }
 }
 
