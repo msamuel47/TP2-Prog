@@ -211,7 +211,7 @@ namespace TP2ETU
                     testerPosition = rnd.Next(0, tousLesPicturesBox.Length);
                     do
                         {
-                            for (int j = i; j > 0; j--)
+                            for (int j = i; j >= 0; j--)
                                 {
                                     if (testerPosition == positionDesMots[j])
                                         {
@@ -221,6 +221,7 @@ namespace TP2ETU
                                 }
                         } while (motDejaPresent);
                     positionDesMots[i] = testerPosition;
+                    
                 }
 
         }
@@ -249,7 +250,7 @@ namespace TP2ETU
         int[] CreerTableauDeNombreAleatoireUnique(int nbMinimum, int nbMaximum, int tailleTableau)
         {
             int[] tableauARemplir = new int[tailleTableau];
-            tableauARemplir[0] = rnd.Next(nbMinimum, nbMaximum + 1);
+            tableauARemplir[0] = rnd.Next(nbMinimum, nbMaximum);
             Debug.WriteLine("Le nombre {0} à été assigné à l'indice {1}", tableauARemplir[0], 0);
             int indiceAVerifier = nbMinimum - 1;
             for (int i = 0; i < tailleTableau; i++)
